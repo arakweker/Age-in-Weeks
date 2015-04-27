@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
         var strDate = dateFormatter.stringFromDate(dateSelection.date)
-        ageLabel.text = "Birthdate: " + strDate
+        ageLabel.text = "Birthday: " + strDate
         
         var calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         var toDay = NSDate()
@@ -39,12 +39,12 @@ class ViewController: UIViewController {
             toDate: toDay,
             options: nil)
         
-        var aantalDagenInLeven = durationDateComponets.day
-        var aantalWekenInLeven = Int(aantalDagenInLeven / 7)
-        var restDagen = aantalDagenInLeven - (aantalWekenInLeven * 7)
+        var daysAlive = durationDateComponets.day
+        var weeksAlive = Int(daysAlive / 7)
+        var someDays = daysAlive - (weeksAlive * 7)
         
-        componentLabel.text = "Alive for \(aantalWekenInLeven) weeks and \(restDagen) days"
-        nrOfDays.text = "Alive for \(aantalDagenInLeven) days"
+        componentLabel.text = "Alive for \(weeksAlive) weeks and \(someDays) days"
+        nrOfDays.text = "Alive for \(daysAlive) days"
         ageLabel.hidden = false
         componentLabel.hidden = false
         nrOfDays.hidden = false
