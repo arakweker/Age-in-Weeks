@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var dateSelection: UIDatePicker!
     @IBOutlet weak var componentLabel: UILabel!
     @IBOutlet weak var nrOfDays: UILabel!
+    @IBOutlet weak var shortHand: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,11 +44,13 @@ class ViewController: UIViewController {
         var weeksAlive = Int(daysAlive / 7)
         var someDays = daysAlive - (weeksAlive * 7)
         
-        componentLabel.text = "Alive for \(weeksAlive) weeks and \(someDays) days"
-        nrOfDays.text = "Alive for \(daysAlive) days"
+        componentLabel.text = "Alive for: \(weeksAlive) weeks and \(someDays) days"
+        nrOfDays.text = "Alive for: \(daysAlive) days"
+        shortHand.text = "Alive for: \(weeksAlive)w\(someDays)d"
         ageLabel.hidden = false
         componentLabel.hidden = false
         nrOfDays.hidden = false
+        shortHand.hidden = false
     }
 }
 
